@@ -17,7 +17,7 @@ class CreateClientsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('cnpj');
-            $table->float('total_expense');
+            $table->float('total_expense')->nullable();
             $table->string('address')->nullable();
             $table->string('address_number')->nullable();
             $table->string('city')->nullable();
