@@ -13,6 +13,11 @@ class ClientsController extends Controller
         return response()->json($clients);
     }
 
+    public function show(Request $request, Clients $client)
+    {
+        return response()->json($client);
+    }
+
     public function store(Request $request)
     {
         //validação
@@ -41,7 +46,7 @@ class ClientsController extends Controller
         return response()->json($clients);
     }
 
-    public function update(Request $request, Clients $clients)
+    public function update(Request $request, Clients $client)
     {
         //validação
         $request->validate([
@@ -54,7 +59,7 @@ class ClientsController extends Controller
             'phone' => 'required',
         ]);
 
-        $clients->update([
+        $client->update([
             'name' => $request->name,
             'cnpj' => $request->cnpj,
             'address' => $request->address,
@@ -65,12 +70,12 @@ class ClientsController extends Controller
         ]);
 
         //retorna 
-        return response()->json($clients);
+        return response()->json($client);
     }
 
-    public function destroy(Clients $clients)
+    public function destroy(Clients $client)
     {
-        $clients->delete();
-        return response()->json($clients);
+        $client->delete();
+        return response()->json($client);
     }
 }

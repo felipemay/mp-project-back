@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('clients', ClientsController::class);
-Route::apiResource('orders', OrdersController::class);
+Route::apiResource('clients.orders', OrdersController::class);

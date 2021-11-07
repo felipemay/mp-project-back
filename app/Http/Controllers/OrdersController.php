@@ -9,8 +9,8 @@ class OrdersController extends Controller
 {
     public function index()
     {
-        $orders = Orders::all();
-        return response()->json($orders);
+        $order = Orders::all();
+        return response()->json($order);
     }
 
     public function store(Request $request)
@@ -22,11 +22,11 @@ class OrdersController extends Controller
         ]);
 
         //save
-        $orders = Orders::create([
+        $order = Orders::create([
             'product_name' => $request->product_name,
             'price' => $request->price,
         ]);
 
-        return response()->json($orders);
+        return response()->json($order);
     }
 }
